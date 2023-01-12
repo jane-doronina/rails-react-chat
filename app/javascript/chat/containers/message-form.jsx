@@ -18,7 +18,7 @@ class MessageForm extends React.Component {
   }
 
   handleSubmit = () => {
-    this.props.createMessage(this.props.selectedChannel, this.props.currentUsername, this.state.input)
+    this.props.createMessage(this.props.selectedChannel, this.state.input)
     this.setState({
       input: ""
     })
@@ -44,7 +44,6 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
-    selectedChannel: state.selectedChannel,
     currentUsername: state.currentUsername
   }
 }

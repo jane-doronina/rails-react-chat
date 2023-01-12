@@ -5,7 +5,11 @@ const messagesReducer = (state = null, action) => {
     case SET_MESSAGES:
       return action.payload;
     case CREATE_MESSAGE:
-      return [...state, action.payload]
+      if (state.map(message => message.id).includes(action.payload.id)) {
+        return state;
+      } else {
+        return [...state, action.payload];
+      }
     case SELECT_CHANNEL:
       return []
     default:

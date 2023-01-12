@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { selectChannel, setMessages } from "../actions"
@@ -11,7 +12,8 @@ class ChannelList extends React.Component {
   }
 
   handleClick = (channel) => {
-    this.props.selectChannel(channel);
+    this.props.selectChannel();
+    this.props.setMessages(channel);
   }
 
   render() {
@@ -19,7 +21,15 @@ class ChannelList extends React.Component {
       <div className='channels'>
         <h1>Redux Chat</h1>
         <ul className="channel-list">
-        {this.props.channels.map((channel, i) => <li key={i} className={channel === this.props.selectedChannel ? "active" : ""} onClick={() => this.handleClick(channel)} role="presentation">#{channel}</li>)}
+        {this.props.channels.map((channel, i) => <li
+          key={i}
+          className={channel === this.props.selectedChannel ? 'active' : null}
+          onClick={() => this.handleClick(channel)}>
+          <Link
+            to={`/channels/${channel}`}>
+            #{channel}
+          </Link>
+        </li>)}
         </ul>
       </div>
     )
@@ -28,8 +38,8 @@ class ChannelList extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators(
-    { selectChannel: selectChannel,
-      setMessages: setMessages },
+    { selectChannel,
+      setMessages },
     dispatch
   )
 }

@@ -21,6 +21,11 @@
   background-color: lightgrey;
   padding-left: 30px;
 
+  h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
   .channel-list {
     list-style: none;
     padding-left: 0;
@@ -30,7 +35,7 @@
       cursor: pointer;
     }
     .active {
-      font-weight: bolder;
+      font-weight: 600;
     }
   }
 }

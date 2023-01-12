@@ -33,7 +33,10 @@ class MessageList extends React.Component {
     if(!this.props.messages || this.props.messages.length === 0 ) {
       messagesToDisplay = <p>No messages yet. Be the first to write!</p>
     } else {
-      messagesToDisplay = this.props.messages.map((message, i) => <Message key={i} message={message} />)
+
+      messagesToDisplay = this.props.messages.map((message, i) => {
+      console.log(message)
+      return <Message key={i} message={message} />})
     }
     return(
       <div className="message-list-container">
@@ -41,7 +44,7 @@ class MessageList extends React.Component {
         <div className="messages-container" ref={(list) => { this.list = list; }}>
           {messagesToDisplay}
         </div>
-        <MessageForm />
+        <MessageForm selectedChannel={this.props.selectedChannel} />
       </div>
     )
   }

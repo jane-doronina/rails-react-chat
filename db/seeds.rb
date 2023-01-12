@@ -14,9 +14,9 @@ general = Channel.new(name: "general")
 london = Channel.new(name: "london")
 react = Channel.new(name: "react")
 
-user1 = User.create(email: "test1@mail.ru", password: "123456")
-user2 = User.create(email: "test2@mail.ru", password: "123456")
-user3 = User.create(email: "test3@mail.ru", password: "123456")
+user1 = User.create(email: "test1@mail.ru", nickname: "jane", password: "123456")
+user2 = User.create(email: "test2@mail.ru", nickname: "yarik", password: "123456")
+user3 = User.create(email: "test3@mail.ru", nickname: "zhanna", password: "123456")
 
 message1 = Message.create(user: user1, channel: general, content: "Hey everyone")
 message2 = Message.create(user: user2, channel: general, content: "Hey to you too. How are you doing?")

@@ -10,10 +10,12 @@ import { createRoot } from 'react-dom/client';
 import App from './components/App';
 import messagesReducer from './reducers/messagesReducer.js';
 
+const chatContainer = document.getElementById('chat_app');
+const channels = JSON.parse(chatContainer.dataset.channels).map(c => c.name);
 
 const initialState = {
   messages: [],
-  channels: [ 'general', 'react', 'paris' ], // TODO: get that from Rails DB.
+  channels: channels
 };
 
 const reducers = combineReducers({
@@ -24,7 +26,6 @@ const reducers = combineReducers({
 const middlewares = applyMiddleware(logger, ReduxPromise);
 const store = createStore(reducers, initialState, middlewares);
 
-const chatContainer = document.getElementById('chat_app');
 const root = createRoot(chatContainer);
 
 root.render(
