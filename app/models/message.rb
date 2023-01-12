@@ -4,8 +4,6 @@ class Message < ApplicationRecord
 
   validates :content, presence: true
 
-  # after_create :broadcast_message
-
   def as_json(_options = {})
     nickname = user.nickname.nil? ? user.email.match(/[^@]+/)[0] : user.nickname
 
@@ -17,8 +15,4 @@ class Message < ApplicationRecord
       channel: channel.name
     }
   end
-
-  # def broadcast_message
-  #   ActionCable.server.broadcast("channel_#{channel.name}", self)
-  # end
 end

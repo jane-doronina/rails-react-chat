@@ -12,7 +12,7 @@ class MessageList extends React.Component {
   }
 
   componentDidMount() {
-    // this.refresher = setInterval(this.fetchMessages, 5000);
+    this.refresher = setInterval(this.fetchMessages, 5000);
   }
 
   componentDidUpdate() {
@@ -34,9 +34,7 @@ class MessageList extends React.Component {
       messagesToDisplay = <p>No messages yet. Be the first to write!</p>
     } else {
 
-      messagesToDisplay = this.props.messages.map((message, i) => {
-      console.log(message)
-      return <Message key={i} message={message} />})
+      messagesToDisplay = this.props.messages.map((message, i) => <Message key={i} message={message} />)
     }
     return(
       <div className="message-list-container">
