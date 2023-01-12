@@ -11,7 +11,7 @@ function App(props) {
     <div className="app">
       <div className='logo-div'><img src={logo} alt="react logo" /></div>
       <ChannelList selectedChannel={channel} />
-      <MessageList selectedChannel={channel} />
+      <MessageList selectedChannel={channel} current_user={props.current_user} />
     </div>
   );
 }

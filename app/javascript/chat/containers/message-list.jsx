@@ -34,7 +34,7 @@ class MessageList extends React.Component {
       messagesToDisplay = <p>No messages yet. Be the first to write!</p>
     } else {
 
-      messagesToDisplay = this.props.messages.map((message, i) => <Message key={i} message={message} />)
+      messagesToDisplay = this.props.messages.map((message, i) => <Message key={i} message={message} current_user={this.props.current_user} />)
     }
     return(
       <div className="message-list-container">

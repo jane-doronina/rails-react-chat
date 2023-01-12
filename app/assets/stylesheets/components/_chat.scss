@@ -55,6 +55,8 @@
 
   .messages-container {
     padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
     border-top: 1px solid lightgray;
     border-bottom: 1px solid lightgray;
     height: 85%;
@@ -75,6 +77,23 @@
     .content {
       margin-top: 12px;
     }
+  }
+
+  .message {
+    background-color: white;
+    width: 400px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px
+  }
+
+  .my-message {
+    background-color: rgb(245, 255, 245);
+    width: 400px;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    align-self: flex-end;
   }
 
   .message-form {

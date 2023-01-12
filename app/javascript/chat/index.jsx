@@ -12,6 +12,7 @@ import messagesReducer from './reducers/messagesReducer.js';
 
 const chatContainer = document.getElementById('chat_app');
 const channels = JSON.parse(chatContainer.dataset.channels).map(c => c.name);
+const current_user = chatContainer.dataset.user
 
 const initialState = {
   messages: [],
@@ -32,7 +33,7 @@ root.render(
   <Provider store={store}>
     <BrowserRouter>
       <Routes>
-        <Route path="/channels/:channel" element={<App/>} />
+        <Route path="/channels/:channel" element={<App current_user={current_user}/>} />
       </Routes>
     </BrowserRouter>
   </Provider>
