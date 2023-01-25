@@ -7,7 +7,7 @@ import ReduxPromise from 'redux-promise';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 
-import App from './components/App';
+import App from "./components/App.jsx";
 import messagesReducer from './reducers/messagesReducer.js';
 
 const chatContainer = document.getElementById('chat_app');

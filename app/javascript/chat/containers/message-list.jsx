@@ -3,8 +3,8 @@ import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
 import { setMessages } from "../actions";
-import Message from "../components/message";
-import MessageForm from "./message-form";
+import Message from "../components/message.jsx";
+import MessageForm from "./message-form.jsx";
 
 class MessageList extends React.Component {
   UNSAFE_componentWillMount() {

@@ -22,7 +22,9 @@
     "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "webpack" : "webpack",
+    "dev": "npm run webpack -- --mode development --watch"
   },
   "devDependencies": {
     "webpack-dev-server": "^3"

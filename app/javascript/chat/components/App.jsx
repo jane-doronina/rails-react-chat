@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import logo from '../../../assets/images/le_wagon_logo.png'
-import MessageList from '../containers/message-list';
-import ChannelList from '../containers/channel-list';
+import MessageList from '../containers/message-list.jsx';
+import ChannelList from '../containers/channel-list.jsx';
 
 function App(props) {
   const { channel } = useParams();
