@@ -81,7 +81,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV[‘DATABASE_URL’] %>
   database: rails_react_chat_production
   username: rails_react_chat
   password: <%= ENV["RAILS_REACT_CHAT_DATABASE_PASSWORD"] %>
